@@ -192,7 +192,7 @@ namespace WpfApplication1
                     foZadan(array);
                     break;
                 case ("5"):
-                    //fifZadan(array);
+                    fifZadan(array);
                     break;
                 case ("6"):
                     //sixZadan(array);
@@ -295,6 +295,23 @@ namespace WpfApplication1
             otvet.Text += "\n cреднее:" + (temp / 10) + "\n Ответ:";
             if (arr[0] > (temp / 10)) otvet.Text += "Да";
             else otvet.Text += "Нет";
+        }
+        void fifZadan(int[] arr)
+        {
+            otvet.Text = "Массив:"; for (int i = 0; i < 10; i++)
+            {
+                otvet.Text += arr[i] + " ";
+            }
+            int temp, temp1 = 0;
+            if (arr[0] > 0) temp = 1;
+            else temp = 0;
+            for (int i = 1; i < 10; i++)
+            {
+                if ((arr[i] > 0) & (temp == 0)) { temp = 1; temp1 += 1; }
+                else
+                    if ((arr[i] < 0) && (temp == 1)) { temp = 0; temp1 += 1; }
+            }
+            otvet.Text += "\n Ответ: " + temp1;
         }
 
         private void S_TextChanged(object sender, TextChangedEventArgs e)
