@@ -183,7 +183,7 @@ namespace WpfApplication1
                     OneZadan(array);
                     break;
                 case ("2"):
-                    //twoZadan(array);
+                    twoZadan(array);
                     break;
                 case ("3"):
                     //triZadan(array);
@@ -259,7 +259,19 @@ namespace WpfApplication1
             }
             otvet.Text += "\n ответ:" + n;
         }
-       
+        void twoZadan(int[] arr)
+        {
+            otvet.Text = "Массив:";
+            for (int i = 0; i < 10; i++)
+            {
+                otvet.Text += arr[i] + " ";
+            }
+            for (int i = 0; i < 10; i++)
+            {
+                if (arr[i] > 25) { otvet.Text += "\n Ответ:" + (i + 1); break; }
+            }
+        }
+
         private void S_TextChanged(object sender, TextChangedEventArgs e)
         {
 
